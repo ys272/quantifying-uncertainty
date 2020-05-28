@@ -251,6 +251,8 @@ def main():
             saved_params = torch.load(dir_path+"/equation_four.pt")
         elif args.eqfive:
             saved_params = torch.load(dir_path+"/equation_five.pt")
+        else:
+            parser.error("you must specify the desired loss function: --eqthree, --eqfour or --eqfive.")
 
         model = LeNet()
         optimizer = torch.optim.Adam(model.parameters())
